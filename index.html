@@ -14,8 +14,8 @@
   <!-- Hero Section -->
   <section class="flex flex-col lg:flex-row justify-between items-center bg-cover bg-center py-20 px-8" style="background-image: url('https://source.unsplash.com/1600x900/?cattle');">
     <div class="text-white text-center lg:text-left lg:w-1/2">
-      <h1 class="text-5xl font-extrabold mb-6 leading-tight">Bienvenidos a nuestra Ganadería Campo Dorado</h1>
-      <p class="text-lg mb-6">Productos frescos y de calidad para tu mesa: Ganado de Lidia, Productos Lácteos y Ganado Vacuno.</p>
+      <h1 class="text-5xl font-extrabold mb-6 leading-tight animate-fade-in">Bienvenidos a nuestra Ganadería Campo Dorado</h1>
+      <p class="text-lg mb-6 animate-fade-in-delay">Productos frescos y de calidad para tu mesa: Ganado de Lidia, Productos Lácteos y Ganado Vacuno.</p>
       <a href="#productos" class="bg-yellow-500 hover:bg-yellow-400 text-gray-800 px-8 py-4 text-lg font-semibold rounded-full transition duration-300">Ver nuestros productos</a>
     </div>
     <div class="lg:w-1/2 mt-8 lg:mt-0">
@@ -34,7 +34,17 @@
 
         <!-- Ganado de Lidia -->
         <div class="bg-white shadow-xl rounded-lg overflow-hidden hover:scale-105 transform transition duration-500">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWT3P6TqTCxWTe4aOeTbhpRMOjp9diUKSJkQ&s" alt="Ganado de lidia criado con calidad" class="w-full h-64 object-cover rounded-t-lg">
+          <div class="relative">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="lidia1.jpeg" alt="Ganado de lidia 1" class="w-full h-64 object-cover rounded-t-lg"></div>
+                <div class="swiper-slide"><video src="lidia2.mp4" controls class="w-full h-64 rounded-t-lg"></video></div>
+                <div class="swiper-slide"><img src="lidia3.jpeg" alt="Ganado de lidia 2" class="w-full h-64 object-cover rounded-t-lg"></div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
           <div class="p-6">
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ganado de Lidia</h3>
             <p class="text-lg text-gray-600">Criado con estándares de calidad para garantizar su rendimiento en cualquier evento taurino.</p>
@@ -44,34 +54,27 @@
 
         <!-- Productos Lácteos -->
         <div class="bg-white shadow-xl rounded-lg overflow-hidden hover:scale-105 transform transition duration-500">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPFiCM1UfyQhF-YJ37oacDNnT9jZ0vPtX9Q&s" alt="Productos lácteos frescos y naturales" class="w-full h-64 object-cover rounded-t-lg">
+          <div class="relative">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="lechero1.jpeg" alt="Productos lácteos 1" class="w-full h-64 object-cover rounded-t-lg"></div>
+                <div class="swiper-slide"><img src="lechero2.jpeg" alt="Productos lácteos 2" class="w-full h-64 object-cover rounded-t-lg"></div>
+                <div class="swiper-slide"><img src="lechero3.jpeg" alt="Productos lácteos 3" class="w-full h-64 object-cover rounded-t-lg"></div>
+                <div class="swiper-slide"><img src="lacteos1.png" alt="Productos lácteos 4" class="w-full h-64 object-cover rounded-t-lg"></div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
           <div class="p-6">
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Productos Lácteos</h3>
             <p class="text-lg text-gray-600">Deliciosos quesos y yogures elaborados con leche fresca, ideales para toda la familia.</p>
             <a href="#" class="mt-4 inline-block text-lg font-semibold text-yellow-500 hover:text-yellow-400">Más detalles</a>
           </div>
         </div>
-
-        <!-- Ganado Vacuno -->
-        <div class="bg-white shadow-xl rounded-lg overflow-hidden hover:scale-105 transform transition duration-500">
-          <img src="https://www.blog.consentidovacuno.es/posts/easset_upload_file41303_849543_e.jpg" alt="Ganado vacuno para carne de alta calidad" class="w-full h-64 object-cover rounded-t-lg">
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ganado Vacuno</h3>
-            <p class="text-lg text-gray-600">Ganado vacuno de alta calidad, ideal para la producción de carne de excelente sabor.</p>
-            <a href="#" class="mt-4 inline-block text-lg font-semibold text-yellow-500 hover:text-yellow-400">Más detalles</a>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
-
-  <!-- WhatsApp Button -->
-  <div class="fixed bottom-8 right-8">
-    <a href="https://wa.me/+51984318728" target="_blank" class="flex items-center justify-center bg-green-600 text-white p-5 rounded-full shadow-lg hover:bg-green-500 transition duration-300">
-      <span class="ml-2 text-lg font-semibold">Contáctanos</span>
-    </a>
-  </div>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-6 mt-16">
@@ -80,5 +83,19 @@
     </div>
   </footer>
 
+  <!-- Swiper.js -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swipers = document.querySelectorAll('.swiper-container');
+    swipers.forEach(swiper => {
+      new Swiper(swiper, {
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    });
+  </script>
 </body>
 </html>
