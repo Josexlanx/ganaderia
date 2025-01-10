@@ -9,6 +9,34 @@
   <meta name="keywords" content="productos ganaderos, ganado de lidia, productos lácteos, ganado vacuno, calidad ganadera">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .swiper-slide img,
+    .swiper-slide video {
+      transition: transform 0.5s ease-in-out;
+    }
+    .swiper-slide img:hover,
+    .swiper-slide video:hover {
+      transform: scale(1.05);
+    }
+    .btn-hover {
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    .btn-hover:hover {
+      transform: translateY(-3px);
+      background-color: #facc15;
+    }
+  </style>
 </head>
 <body class="font-sans bg-gradient-to-r from-teal-300 to-blue-400">
 
@@ -17,7 +45,7 @@
     <div class="text-white text-center lg:text-left lg:w-1/2">
       <h1 class="text-5xl font-extrabold mb-6 leading-tight">Bienvenidos a nuestra Ganadería Campo Dorado</h1>
       <p class="text-lg mb-6">Productos frescos y de calidad para tu mesa: Ganado de Lidia, Productos Lácteos y Ganado Vacuno.</p>
-      <a href="#productos" class="bg-yellow-500 hover:bg-yellow-400 text-gray-800 px-8 py-4 text-lg font-semibold rounded-full transition duration-300">Ver nuestros productos</a>
+      <a href="#productos" class="bg-yellow-500 hover:bg-yellow-400 text-gray-800 px-8 py-4 text-lg font-semibold rounded-full btn-hover">Ver nuestros productos</a>
     </div>
     <div class="lg:w-1/2 mt-8 lg:mt-0">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREapAIoLCBlWaJ-NpVaO0w8q62ySsTNfAfNA&s" alt="Imagen de productos ganaderos" class="rounded-lg shadow-xl w-full">
@@ -61,7 +89,6 @@
         <div class="bg-white shadow-xl rounded-lg overflow-hidden hover:scale-105 transform transition duration-500">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-
               <div class="swiper-slide">
                 <img src="lacteos1.png" alt="Productos lácteos - Foto 4" class="w-full h-64 object-cover rounded-t-lg">
               </div>
@@ -102,24 +129,28 @@
       </div>
     </div>
   </section>
-    <!-- WhatsApp Button -->
-    <div class="fixed bottom-8 right-8">
-      <a href="https://wa.me/+51984318728" target="_blank" class="flex items-center justify-center bg-green-600 text-white p-5 rounded-full shadow-lg hover:bg-green-500 transition duration-300">
-        <span class="ml-2 text-lg font-semibold">Contáctanos</span>
-      </a>
+
+  <!-- WhatsApp Button -->
+  <div class="fixed bottom-8 right-8">
+    <a href="https://wa.me/+51984318728" target="_blank" class="flex items-center justify-center bg-green-600 text-white p-5 rounded-full shadow-lg hover:bg-green-500 transition duration-300">
+      <span class="ml-2 text-lg font-semibold">Contáctanos</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-16">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 | Todos los derechos reservados</p>
     </div>
-  
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 mt-16">
-      <div class="container mx-auto text-center">
-        <p>&copy; 2025 | Todos los derechos reservados</p>
-      </div>
-    </footer>
+  </footer>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {
       loop: true,
+      autoplay: {
+        delay: 6000, // Cambiar imágenes automáticamente cada 3 segundos
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
